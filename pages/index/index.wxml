@@ -69,14 +69,13 @@
               </view>
           </view>
       </view>
-  </view>
-  <view class="" wx:else>没有找到相关职位</view>
-        <view  wx:if="{{showLoadMore}}" class="weui-loadmore">  
+
+         <view  wx:if="{{showLoadMore}}" class="weui-loadmore">  
             <view class="weui-loading"></view>
-            <view class="weui-loadmore__tips">正在加载</view>
+            <view class="weui-loadmore__tips">加载更多职位 ...</view>
         </view>
         <view  wx:elif="{{noMoreLoad}}" class="weui-loadmore weui-loadmore_line">
-            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">已呈上了所有职位</view>
         </view>
         <view wx:else class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
             <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
@@ -89,6 +88,12 @@
                 顶部
             </view>
       </view>-->
+
+  </view>
+  
+  <view class="" wx:else>  没有找到相关职位。  </view>
+
+     
 </scroll-view>
 
 </view>

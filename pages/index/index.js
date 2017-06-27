@@ -273,7 +273,7 @@ Page({
  
 
   // 发出一个请求
-  pushJobs: function () {
+  pullJobs: function () {
 
     var self = this
 
@@ -307,10 +307,15 @@ Page({
             thisDataList.push(result.data[i])
           }
 
+          var noMoreLoad = false
+          if (self.data.limit > result.data.length){
+            noMoreLoad = true
+          }
+
           console.log('当前的职位', self.data.jobs)
           self.setData({
             jobs: thisDataList,
-
+            noMoreLoad: noMoreLoad,
             showLoadMore: false
           })
           console.log('request success', result)
@@ -346,10 +351,11 @@ Page({
       })
     }else{
       // 网络请求
-      this.pushJobs();
+      this.pullJobs();
     }
     console.log('offset', this.data.jobs.length )
   },
+
   goTop: function (e) {
     this.setData({
       scrollTop: 0
