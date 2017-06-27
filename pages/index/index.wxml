@@ -1,0 +1,94 @@
+<view class="container">
+<!--搜索框-->
+
+<view class="page__bd">
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="updateSearchContent" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text"><text wx:if="{{queryContent !=''}}"> {{queryContent}} </text><text wx:else> 搜索 </text></view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+    </view>
+
+    <view class="weui-flex">
+           
+            <view class="weui-flex__item">
+            <picker bindchange="bindPickerCateChange" value="{{cateIndex}}" range="{{cateSelect}}">
+                  <text class="select">{{cateText}}</text>
+              </picker>
+            </view>
+            <view class="weui-flex__item">
+              <picker bindchange="bindPickerPayChange" value="{{payIndex}}" range="{{paySelect}}">
+                 <text class="select">{{payText}}</text>
+              </picker>
+            </view>
+            
+            <view class="weui-flex__item">
+              <picker bindchange="bindPickerTagChange" value="{{tagIndex}}" range="{{tagSelect}}">
+                  <text class="select">{{tagText}}</text>
+              </picker>
+            </view>
+               <view class="weui-flex__item">
+            <picker bindchange="bindPickerDistanceChange" value="{{distanceIndex}}" range="{{distanceSelect}}">
+                <text class="select">{{distanceText}}</text>
+            </picker>
+            </view>
+    </view>
+
+
+<!--<scroll-view class="bigWrap" scroll-y="true" scroll-top="{{scrollTop}}"  bindscroll="scroll" bindscrolltolower="scrolltolower" style="position:absolute; left: 0; top:0; bottom: 0; right: 0;" hidden="{{condition}}">-->
+<scroll-view scroll-y hidden="{{condition}}">
+  <view class="weui-panel"  wx:if="{{jobs.length > 0}}">
+      <view class="weui-panel__hd">搜索结果根据更新时间、热度、推荐指数进行综合排序</view>
+      <view class="weui-panel__bd">
+          <view class="weui-media-box weui-media-box_text" wx:for="{{jobs}}" wx:key="{{index}}">
+
+              <navigator url="../jobinfo/jobinfo?id={{item.id}}" >
+
+              <view class="weui-media-box__title weui-media-box__title_in-text" >{{item.title}}</view>
+              </navigator>
+              <view class="weui-media-box__info">
+                  <view class="weui-media-box__info__meta">待遇：{{item.salary}} </view> 
+                  <view class="weui-media-box__info__meta" >{{item.position}}</view>
+                  <view class="weui-media-box__info__meta">{{item.updated_date}}</view>
+              </view>
+              <view class="weui-media-box__info">
+                  <view class="weui-media-box__info__meta" >{{item.area}}</view>
+                  <view class="weui-media-box__info__meta">{{item.company}}</view>
+                  <view class="weui-media-box__info__meta" wx:if="{{item.distance}} !=''">{{item.distance}}</view> 
+              </view>
+          </view>
+      </view>
+  </view>
+  <view class="" wx:else>没有找到相关职位</view>
+        <view  wx:if="{{showLoadMore}}" class="weui-loadmore">  
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips">正在加载</view>
+        </view>
+        <view  wx:elif="{{noMoreLoad}}" class="weui-loadmore weui-loadmore_line">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+        </view>
+        <view wx:else class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+        </view>
+<!--</scroll-view>
+
+<scroll-view class="bigWrap" scroll-y="true" scroll-top="{{scrollTop}}"  bindscroll="scroll" bindscrolltolower="scrolltolower" style="position:absolute; left: 0; top:0; bottom: 0; right: 0;">-->
+      <!--<view class="com-widget-goTop" bindtap="goTop" wx:if="{{floorstatus}}">
+            <view class="icon-gotop">
+                顶部
+            </view>
+      </view>-->
+</scroll-view>
+
+</view>

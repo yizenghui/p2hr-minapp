@@ -1,0 +1,41 @@
+.container{
+  padding: 0;
+}
+.xl-scroll{
+  border: 0;
+  margin: 0;
+}
+.xl-list{
+  height: 180rpx;
+  border-bottom: 1px solid #ddd;
+  color: #888;
+}
+.xl-list:nth-of-type(2n){
+  background: #fafafa;
+}
+.text1{
+  float: left;
+  width: 22%;
+  text-align: center;
+  line-height: 180rpx;
+  color: dodgerblue;
+  font-size: 32rpx;
+}
+.list-view{
+  float: left;
+  width: 78%;
+  font-size: 26rpx;
+}
+.text2{
+  padding: 50rpx 0 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  color: #333;
+}
+.list-view{
+  height: 30rpx;
+  line-height: 30rpx;
+}
+.text4{
+  padding: 0 18rpx;
+}

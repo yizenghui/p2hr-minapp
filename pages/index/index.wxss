@@ -1,0 +1,61 @@
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+.page__bd {
+    padding-bottom:0;
+}
+
+.select{
+position:relative;
+display:block;
+margin-left:auto;
+margin-right:auto;
+padding-left:0;
+padding-right:0;
+box-sizing:border-box;
+font-size:12px;
+text-align:center;
+text-decoration:none;
+line-height:2.55555556;
+border-radius:1px;
+-webkit-tap-highlight-color:transparent;
+overflow:hidden;
+color:#000000;
+background-color:#F8F8F8;
+text-overflow:ellipsis;
+width:66px;
+height:30px;
+}
+
+
+.bigWrap{ 
+background:#eee; 
+} 
+.com-widget-goTop { 
+position: fixed; 
+bottom: 125px; 
+right: 5px; 
+background: rgba(0,0,0,0.48); 
+border-radius: 50%; 
+overflow: hidden; 
+z-index: 500; 
+} 
+.com-widget-goTop .icon-gotop{ 
+background-color: rgba(0,0,0,0.8); 
+display: inline-block; 
+width: 50px; 
+height: 50px; 
+line-height: 68px; 
+font-size: 12px; 
+color: #ffffff; 
+text-align: center; 
+border-radius: 50%; 
+background: url(http://m.dev.vd.cn/static/xcx/v1/goo/w_2-3451cc437e.png) no-repeat center -1110px; -webkit-background-size: 50px auto; 
+}

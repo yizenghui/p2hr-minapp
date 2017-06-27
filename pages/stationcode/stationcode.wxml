@@ -1,0 +1,15 @@
+
+<!--input.wxml-->
+<view class="container">
+  <scroll-view scroll-y class="scroll-padding xl-scroll" wx:if="{{condition}}">
+    <navigator class="xl-list" url="../busline/busline?busline={{item.code}}" wx:for="{{stationCode}}" wx:key="{{index}}">
+      <view class="text1">{{item.bus}}</view>
+      <view class="list-view">
+        <view class="text2">{{item.FromTo}}</view>
+        <text class="text3">车牌：{{item.carCode}}</text>
+        <text class="text4">时间：{{item.time}}</text>
+        <text class="text5">站距：{{item.distance}}</text>
+      </view>
+    </navigator>
+  </scroll-view>
+</view>

@@ -1,0 +1,75 @@
+
+<view class="page">
+ <scroll-view scroll-y class="scroll-padding" wx:if="{{condition}}">
+    <view class="page__hd">
+        <view class="page__title">{{jobinfo.title}}</view>
+        <text class="page__desc">{{jobinfo.company}}</text>
+    </view>
+    <view class="page__bd">
+
+
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__value_in-hd"> {{jobinfo.salary}}</view>
+               <view class="weui-form-preview__item">
+                  <text style="font-size:14px"  wx:for="{{jobinfo.tags}}"  wx:for-item="tag"> {{tag}} </text>
+              </view>
+               <view class="weui-form-preview__item">{{jobinfo.education}}/{{jobinfo.experience}}</view>
+            </view>
+        </view>
+
+        <view class="weui-article">
+            <view class="weui-article__section">
+            <view class="weui-article__h3">职位详细</view>
+                <text class="weui-article__p">
+                    {{jobinfo.intro}}
+                </text>
+            </view>
+        </view>
+
+
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__value_in-hd"> 联系人 </view>
+            </view>
+            <view class="weui-form-preview__bd">
+              
+                <view class="weui-form-preview__item">{{jobinfo.linkman}}</view>
+                <view class="weui-form-preview__item">{{jobinfo.telephone}}</view>
+                <view class="weui-form-preview__item">{{jobinfo.email}}</view>
+                <view class="weui-form-preview__item">{{jobinfo.address}}</view>
+            </view>
+            <view class="weui-form-preview__ft">
+                <navigator class="weui-form-preview__btn weui-form-preview__btn_default" hover-class="weui-form-preview__btn_active">辅助操</navigator>
+                <navigator class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">操作</navigator>
+            </view>
+        </view>
+    </view>
+
+  </scroll-view>
+</view>
+
+<!--input.wxml-->
+<!--<view class="container">
+  <scroll-view scroll-y class="scroll-padding" wx:if="{{condition}}">
+      <view class="">{{jobinfo.title}}</view>
+      <view class="">{{jobinfo.category}}-{{jobinfo.position}}</view>
+      <view class="list-view">
+        <view class="">福利：
+        <text class=""  wx:for="{{jobinfo.tags}}"  wx:for-item="tag"> {{tag}} </text>
+        </view>
+        <view class="">待遇：{{jobinfo.salary}}</view>
+        <view class="">学历要求：{{jobinfo.education}}</view>
+        <view class="">工作经验：{{jobinfo.experience}}</view>
+        <text class="">详细要求：{{jobinfo.intro}}</text>
+
+
+        <view class="">{{jobinfo.company}}</view>
+        <view class="">联系人：{{jobinfo.linkman}}</view>
+        <view class="">电话：{{jobinfo.telephone}}</view>
+        <view class="">邮箱：{{jobinfo.email}}</view>
+        <view class="">工作地址：{{jobinfo.address}}</view>
+      </view>
+  </scroll-view>
+</view>-->
+

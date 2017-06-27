@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/stationcode/stationcode",
+    "pages/jobinfo/jobinfo"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#202020",
+    "navigationBarTitleText": "求职助手",
+    "navigationBarTextStyle":"#fff"
+  }
+}
